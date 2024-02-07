@@ -1,12 +1,12 @@
-const example_values = ["option1", "option2", "option3"];
-const OverallClassification = () => {
+const example_values = ["UNCLASSIFIED", "CUI", "CONFIDIENTIAL", "SECRET"];
+const CurrentClassification = () => {
   return (
     <div className="m-5">
-      <label>Overall Classification:</label>
+      <label>Current Classification:</label>
       <select
         className="border border-black ml-3"
-        name="Overall Classification"
-        id="Overall Classification"
+        name="Current Classification"
+        id="Current Classification"
       >
         {example_values.map((value, index) => (
           <option key={index} value={value}>
@@ -18,4 +18,4 @@ const OverallClassification = () => {
   );
 };
 
-export default OverallClassification;
+export default CurrentClassification;

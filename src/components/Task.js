@@ -1,8 +1,10 @@
 import { useState } from "react";
+import Circle from "./icons/Circle";
 
-const Task = ({ name, fields }) => {
+const Task = ({ heading, fields }) => {
   const [isHidden, setIsHidden] = useState(true);
   const [isColor, setIsColor] = useState(false);
+  const [circleText, setCircleText] = useState("+");
 
   const toggleVisibility = () => {
     setIsHidden(!isHidden);
@@ -12,18 +14,30 @@ const Task = ({ name, fields }) => {
     setIsColor(!isColor);
   };
 
+  const toggleCircleText = () => {
+    if (circleText === "+") setCircleText("-");
+    else setCircleText("+");
+  };
+
   const toggleElements = () => {
     toggleVisibility();
     toggleColor();
+    toggleCircleText();
   };
   return (
     <div
-      onClick={toggleElements}
       className={`${
         isColor ? "bg-neutral-400" : ""
       } text-center p-5 border-b-2 border-black`}
     >
-      {name}
+      <div className="flex justify-between">
+        {heading}
+        <Circle
+          handleClick={toggleElements}
+          circleText={circleText}
+          color="text-black"
+        />
+      </div>
       <div className={`${isHidden ? "hidden" : ""} `}>{fields}</div>
     </div>
   );

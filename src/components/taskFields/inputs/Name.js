@@ -1,15 +1,15 @@
-const PocName = () => {
+const name = () => {
   return (
     <div className="m-5">
-      <label for="POC Name">POC Name:</label>
+      <label for="name">Name:</label>
       <input
         type="text"
-        id="POC Name"
-        name="POC Name"
+        id="name"
+        name="name"
         className="border border-black ml-3"
       ></input>
     </div>
   );
 };
 
-export default PocName;
+export default name;

@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 
 const example_values = [
-  "Intel Assessment",
-  "Talking Points",
-  "Order",
-  "CONOP Presentation/Brief",
+  "Conference",
+  "Briefing/Meeting",
+  "BiLAT/MultiLat Exchange",
+  "Training",
+  "Exercise",
   "Other",
 ];
 
-const ProductType = () => {
+const IntendedUse = () => {
   const [customValue, setCustomValue] = useState("");
 
   const handleChange = (e) => {
     const selectedValue = e.target.value;
     if (selectedValue === "Other") {
-      const newCustomValue = prompt("Enter Product Type:");
+      const newCustomValue = prompt("Enter Intended Use:");
       if (newCustomValue !== null) {
         setCustomValue(newCustomValue);
       }
@@ -23,11 +24,11 @@ const ProductType = () => {
 
   return (
     <div className="m-5">
-      <label>Product Type:</label>
+      <label>Intended Use:</label>
       <select
         className="border border-black ml-3"
-        name="Product Type"
-        id="Product Type"
+        name="Intended Use"
+        id="Intended Use"
         onChange={handleChange}
       >
         {example_values.map((value, index) => (
@@ -40,4 +41,4 @@ const ProductType = () => {
   );
 };
 
-export default ProductType;
+export default IntendedUse;

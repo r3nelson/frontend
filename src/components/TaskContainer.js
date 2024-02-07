@@ -1,31 +1,62 @@
-import Organization from "./taskFields/selects/Organization";
-import OverallClassification from "./taskFields/selects/OverallClassification";
 import ProductType from "./taskFields/selects/ProductType";
-import RequestType from "./taskFields/selects/RequestType";
-import RequestTitle from "./taskFields/inputs/RequestTitle";
 import Email from "./taskFields/inputs/Email";
 import Phone from "./taskFields/inputs/Phone";
-import PocName from "./taskFields/inputs/PocName";
-import PocDirectorate from "./taskFields/selects/PocDirectorate";
-import AdditionalPoc from "./taskFields/inputs/AdditionalPoc";
+import Name from "./taskFields/inputs/Name";
+import PrimaryPocName from "./taskFields/inputs/PrimaryPocName";
+import Command from "./taskFields/selects/Command";
+import Office from "./taskFields/selects/Office";
+import AdditionalPocName from "./taskFields/inputs/AdditionalPocName";
+import IntendedDateOfDisclosure from "./taskFields/inputs/IntendedDateOfDisclosure";
+import IntendedUse from "./taskFields/selects/IntendedUse";
+import MethodOfDisclosure from "./taskFields/inputs/MethodOfDisclosure";
+import DesiredRecipents from "./taskFields/selects/DesiredRecipents";
+import DisclosureCriteria from "./taskFields/inputs/DisclosureCriteria";
 import Task from "./Task";
 import Button from "./Button";
+import ProductTitle from "./taskFields/inputs/ProductTitle";
+import CurrentClassification from "./taskFields/selects/CurrentClassification";
+import UploadProduct from "./taskFields/upload/UploadProduct";
+import FinalCheckAndAcknowledge from "./taskFields/selects/FinalCheckAndAcknowledge";
 
 const TaskContainer = () => {
   return (
     <div className="border-2 border-black w-96 bg-blue-700 ">
-      <Task name={"General"} fields={[<Email />, <Phone />]} />
-      <Task name={"Organization"} fields={<Organization />} />
       <Task
-        name={"POC Information"}
-        fields={[<PocName />, <PocDirectorate />, <AdditionalPoc />]}
+        heading={"Requester Information"}
+        fields={[
+          <Name />,
+          <Command />,
+          <Office />,
+          <Email />,
+          <Phone />,
+          <PrimaryPocName />,
+          <AdditionalPocName />,
+        ]}
       />
       <Task
-        name={"Request Information"}
-        fields={[<RequestTitle />, <RequestType />, <ProductType />]}
+        heading={"Request Details"}
+        fields={[
+          <ProductType />,
+          <IntendedUse />,
+          <IntendedDateOfDisclosure />,
+          <MethodOfDisclosure />,
+          <DesiredRecipents />,
+        ]}
+      />
+      <Task heading={"Disclosure Criteria"} fields={<DisclosureCriteria />} />
+      <Task
+        heading={"Product Details"}
+        fields={[
+          <ProductTitle />,
+          <CurrentClassification />,
+          <UploadProduct />,
+        ]}
       />
 
-      <Task name={"Classification"} fields={<OverallClassification />} />
+      <Task
+        heading={"Final Check and Acknowledge"}
+        fields={<FinalCheckAndAcknowledge />}
+      />
 
       <div className="flex justify-center m-2 p-5">
         <Button text={"Save as Draft"} color={"bg-yellow-500"} />
