@@ -1,0 +1,33 @@
+#app {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+#main {
+    margin: 5px;
+    padding:0;
+
+    height: 90vh;
+    width: 100%;
+
+    font-family:'Courier New', Courier, monospace;
+    font-weight: 600;
+    background-color: #00b3db29;
+    border-radius: 2rem;
+    overflow-y: auto;
+}
+
+#logo {
+    width: 150px;
+    height: auto;
+}
+
+nav {
+    border-radius: inherit;
+    background-image: linear-gradient(to right, #00b4db, #0083b0);
+}
+
+nav a {
+    color: white;
+}

@@ -1,8 +1,9 @@
 import Home from "./pages/Home";
+import "./styles/Home.css"
 
 function App() {
   return (
-    <div>
+    <div id="app">
       <Home />
     </div>
   );
