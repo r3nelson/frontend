@@ -1,16 +1,28 @@
 import Button from "../../Button";
+import React from "react";
+import Base64FileUploader from "./Base64FileUpload";
 
 const UploadProduct = () => {
+  const handleFileUpload = (files) => {
+    console.log("Uploaded files:", files);
+  };
+
   return (
-    <div>
-      <div>
+    <div className="flex justify-evenly">
+      <div className="basis-4">
         <label>Upload Product Document</label>
-        <Button text={"+"} color={"bg-white"} />
+        <Button
+          text={<Base64FileUploader onFileUpload={handleFileUpload} />}
+          color={"bg-white"}
+        />
       </div>
 
-      <div>
+      <div className="basis-4">
         <label>Upload Source Documents</label>
-        <Button text={"+"} color={"bg-white"} />
+        <Button
+          text={<Base64FileUploader onFileUpload={handleFileUpload} />}
+          color={"bg-white"}
+        />
       </div>
     </div>
   );

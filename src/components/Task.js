@@ -24,6 +24,7 @@ const Task = ({ heading, fields }) => {
     toggleColor();
     toggleCircleText();
   };
+
   return (
     <div
       className={`${
