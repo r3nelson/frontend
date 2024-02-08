@@ -1,0 +1,9 @@
+# move this file back one directory
+
+version: "3.8"
+services:
+  source-attribution:
+    build: ./source-attribution
+    container_name: source-attribution_container
+    ports:
+      - "3000:3000"
