@@ -1,66 +1,79 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 
 const Name = () => {
+  const [name, setName] = useState(""); 
+  const [email, setEmail] = useState(""); 
+  const [phone, setPhone] = useState(""); 
+  const [primaryPOCName, setPrimaryPOCName] = useState(""); 
+  const [additionalPOCName, setAdditionalPOCName] = useState(""); 
 
-  const [valueName, setValueName] = useState(""); 
-  const [integerValueName, setIntegerValueName] = useState(0);
+  const handleChangeName = (event) => {
+    setName(event.target.value); 
+  };
 
-  const handleChange = (event) => {
-    setValueName(event.target.value); 
-    if (event.target.value !== "") {
-      setIntegerValueName(2); 
-    } else {
-      setIntegerValueName(1); 
-    }
+  const handleChangeEmail = (event) => {
+    setEmail(event.target.value); 
+  };
+
+  const handleChangePhone = (event) => {
+    setPhone(event.target.value); 
+  };
+
+  const handleChangePrimaryPOCName = (event) => {
+    setPrimaryPOCName(event.target.value); 
+  };
+
+  const handleChangeAdditionalPOCName = (event) => {
+    setAdditionalPOCName(event.target.value); 
   };
 
   return (
     <div className="m-5">
-      <label for="name">Name:</label>
+      <label htmlFor="name">Name:</label>
       <input
         type="text"
         id="name"
         name="name"
         className="border border-black ml-3"
-        value={valueName}
-        onChange={handleChange}
-      ></input>
-        <label for="Email">Email:</label>
+        value={name}
+        onChange={handleChangeName}
+      />
+      <label htmlFor="Email">Email:</label>
       <input
         type="text"
         id="Email"
         name="Email"
         className="border border-black ml-3"
-        value={valueName}
-        onChange={handleChange}
-      ></input>
-   <label for="Phone">Phone:</label>
+        value={email}
+        onChange={handleChangeEmail}
+      />
+      <label htmlFor="Phone">Phone:</label>
       <input
         type="text"
         id="Phone"
         name="Phone"
         className="border border-black ml-3"
-        value={valueName}
-        onChange={handleChange}
-      ></input>
-        <label for="Primary POC Name">Primary POC Name:</label>
+        value={phone}
+        onChange={handleChangePhone}
+      />
+      <label htmlFor="PrimaryPOCName">Primary POC Name:</label>
       <input
         type="text"
-        id="Primary POC Name"
-        name="Primary POC Name"
+        id="PrimaryPOCName"
+        name="PrimaryPOCName"
         className="border border-black ml-3"
-        value={valueName}
-        onChange={handleChange}
-      ></input>
-      <label for="Additional POC Name">Additional POC Name:</label>
+        value={primaryPOCName}
+        onChange={handleChangePrimaryPOCName}
+      />
+      <label htmlFor="AdditionalPOCName">Additional POC Name:</label>
       <input
         type="text"
-        id="Additional POC Name"
-        name="Additional POC Name"
+        id="AdditionalPOCName"
+        name="AdditionalPOCName"
         className="border border-black ml-3"
-        value={valueName}
-        onChange={handleChange}
-      ></input>
+        value={additionalPOCName}
+        onChange={handleChangeAdditionalPOCName}
+      />
     </div>
   );
 };
