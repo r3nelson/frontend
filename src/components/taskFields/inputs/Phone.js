@@ -1,15 +1,22 @@
+import React, { useState } from "react";
+
+
 const Phone = () => {
+  const [valuePhone, setValuePhone] = useState(""); 
+  const [integerValuePhone, setIntegerValuePhone] = useState(0);
+
+  const handleChange = (event) => {
+    setValuePhone(event.target.value); 
+    if (event.target.value !== "") {
+      setIntegerValuePhone(1); 
+    } else {
+      setIntegerValuePhone(0); 
+    }
+  };
   return (
-    <div className="m-5">
-      <label for="Phone">Phone:</label>
-      <input
-        type="text"
-        id="Phone"
-        name="Phone"
-        className="border border-black ml-3"
-      ></input>
-    </div>
+    console.log("")
   );
 };
+
 
 export default Phone;

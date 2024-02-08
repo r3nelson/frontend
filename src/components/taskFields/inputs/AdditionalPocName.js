@@ -1,14 +1,21 @@
+import React, { useState } from "react";
+
+
 const AdditionalPocName = () => {
+  const [value, setValue] = useState(""); 
+  const [integerValue, setIntegerValue] = useState(0);
+
+  const handleChange = (event) => {
+    setValue(event.target.value); 
+    if (event.target.value !== "") {
+      setIntegerValue(1); 
+    } else {
+      setIntegerValue(0); 
+    }
+  };
+
   return (
-    <div className="m-5">
-      <label for="Additional POC Name">Additional POC Name:</label>
-      <input
-        type="text"
-        id="Additional POC Name"
-        name="Additional POC Name"
-        className="border border-black ml-3"
-      ></input>
-    </div>
+    console.log("")
   );
 };
 

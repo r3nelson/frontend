@@ -1,14 +1,22 @@
+import React, { useState } from "react";
+
 const Email = () => {
+
+  const [valueEmail, setValueEmail] = useState(""); 
+  const [integerValueEmail, setIntegerValueEmail] = useState(0);
+
+  const handleChange = (event) => {
+    setValueEmail(event.target.value); 
+    if (event.target.value !== "") {
+      setIntegerValueEmail(1); 
+    } else {
+      setIntegerValueEmail(0); 
+    }
+  };
+
+
   return (
-    <div className="m-5">
-      <label for="Email">Email:</label>
-      <input
-        type="text"
-        id="Email"
-        name="Email"
-        className="border border-black ml-3"
-      ></input>
-    </div>
+    console.log("")
   );
 };
 
